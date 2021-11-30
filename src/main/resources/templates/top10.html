@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Top 10 movies</title>
+</head>
+
+<body>
+
+<p>
+<form method="get">
+    <label>Select date:
+    <input type="date" name="dateTime">
+    </label>
+    <input type="submit" value="Show">
+</form>
+</p>
+
+<p th:each="movie : ${movielist}">
+    <span th:text="${movie.position}"> Position </span>
+    <span th:text="${movie.name}"> Title </span>
+    <span th:text="${movie.year}"> Year </span>
+    <span th:text="${movie.rating}"> Rating </span>
+    <span th:text="${movie.count}"> Count </span>
+</p>
+
+</body>
+
+</html>
